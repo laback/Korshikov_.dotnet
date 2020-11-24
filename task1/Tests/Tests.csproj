@@ -57,8 +57,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BakeryLib\IngredientsLib.csproj">
-      <Project>{f48ad4ad-46e2-405f-8a38-03035dfd1372}</Project>
+      <Project>{F48AD4AD-46E2-405F-8A38-03035DFD1372}</Project>
       <Name>IngredientsLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProductsLib\ProductsLib.csproj">
+      <Project>{08123b03-f590-43e9-a719-db8387d6d44b}</Project>
+      <Name>ProductsLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
