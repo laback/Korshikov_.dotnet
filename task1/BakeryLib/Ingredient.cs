@@ -8,9 +8,22 @@ namespace BakeryLib
 {
     public abstract class Ingredient
     {
+        /// <summary>
+        /// Стоимость ингредиента
+        /// </summary>
         public double Cost { get; protected set; }
+        /// <summary>
+        /// Калорийность ингредиента
+        /// </summary>
         public double Calorific { get; protected set; }
+        /// <summary>
+        /// Объём ингредиента
+        /// </summary>
         public double Volume { get; set; }
+        /// <summary>
+        /// Конструктор класса
+        /// </summary>
+        /// <param name="volume">Объём</param>
         public Ingredient(double volume)
         {
             Volume = volume;

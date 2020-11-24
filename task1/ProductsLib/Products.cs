@@ -14,12 +14,24 @@ namespace BakeryLib
     }
     public class Products
     {
+        /// <summary>
+        /// Массив изделий
+        /// </summary>
         AnyProduct[] _products;
+        /// <summary>
+        /// Количество изделий
+        /// </summary>
         public int countOfProd { get { return _products.Count(); } }
+        /// <summary>
+        /// Конструктор класса
+        /// </summary>
         public Products()
         {
             ReadFile();
         }
+        /// <summary>
+        /// Чтение из файла
+        /// </summary>
         public void ReadFile()
         {
             string filePath = Directory.GetCurrentDirectory() + @"\BakeryProducts.txt";
@@ -62,6 +74,11 @@ namespace BakeryLib
                 }
             }
         }
+        /// <summary>
+        /// Сортировка массива
+        /// </summary>
+        /// <param name="sortState">Параметр сортировки</param>
+        /// <returns>Отсортированный массив</returns>
         public AnyProduct[] ArraySort(SortState sortState)
         {
             AnyProduct temp;
@@ -94,6 +111,12 @@ namespace BakeryLib
             }
             return prods;
         }
+        /// <summary>
+        /// Получение массива изделий с заданными стоимостью и калорийностью
+        /// </summary>
+        /// <param name="cost">Стоимость</param>
+        /// <param name="calorific">Калорийность</param>
+        /// <returns>Массив изделий</returns>
         public AnyProduct[] TakeIdentical(double cost, double calorific)
         {
             AnyProduct[] prods = new AnyProduct[countOfProd];
@@ -104,7 +127,11 @@ namespace BakeryLib
             }
             return prods;
         }
-
+        /// <summary>
+        /// Получение изделий, в которых объём заданного ингредиента больше
+        /// </summary>
+        /// <param name="ingredient">Заданный ингредиент</param>
+        /// <returns>Массив изделий</returns>
         public AnyProduct[] TakeIfMore(Ingredient ingredient)
         {
             AnyProduct[] prods = new AnyProduct[countOfProd];
@@ -114,12 +141,17 @@ namespace BakeryLib
                 ingredients = _products[i].GetIngridients();
                 for(int j = 0; j < ingredients.Count(); j++)
                 {
-                    if (ingredients[j] == ingredient && ingredients[j].Volume > ingredient.Volume)
+                    if (ingredients[j].GetType() == ingredient.GetType() && ingredients[j].Volume > ingredient.Volume)
                         Add(prods, _products[i]);
                 }    
             }
             return prods;
         }
+        /// <summary>
+        /// Получение массива изделий, при производстве которых использовалось указанное кол-во ингредиентов
+        /// </summary>
+        /// <param name="count">Количество ингредиентов</param>
+        /// <returns>Массив изделий</returns>
         public AnyProduct[] TakeByCount(int count)
         {
             AnyProduct[] prods = new AnyProduct[countOfProd];
@@ -130,6 +162,11 @@ namespace BakeryLib
             }
             return prods;
         }
+        /// <summary>
+        /// Доавление элемента в конец массива
+        /// </summary>
+        /// <param name="prods">Массив для добавления</param>
+        /// <param name="product">Изделие для добавления</param>
         public void Add(AnyProduct[] prods, AnyProduct product)
         {
             for(int i = 0; i < prods.Count(); i++)
