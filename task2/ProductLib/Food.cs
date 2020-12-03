@@ -25,11 +25,11 @@ namespace ProductLib
         public static Food operator -(Food f, int count)
         {
             if (count > 0)
-                return new Household(f.Name, f.GetCost(), f.MarkUp, f.Count - count);
+                return new Food(f.Name, f.GetCost(), f.MarkUp, f.Count - count);
             else
                 throw new CustomException("Некорректное количество товара");
         }
 
-        public static implicit operator Food(Household household) => new Food(household.Name, household.GetCost(), household.MarkUp, household.Count);
+        public static explicit operator Food(Household household) => new Food(household.Name, household.GetCost(), household.MarkUp, household.Count);
     }
 }

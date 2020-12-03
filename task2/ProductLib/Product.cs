@@ -11,11 +11,11 @@ namespace ProductLib
         Бытовая,
         Продовольственная
     }
-    public abstract class Product
+    public class Product
     {
         public TypeName NameOfType { get; protected set; }
         public string Name { get; protected set; }
-        private decimal Cost { get; set; }
+        public decimal Cost { get; set; }
         public double MarkUp { get; protected set; }
         public int Count { get; protected set; }
         public Product(TypeName typeName, string name, decimal cost, double markUp, int count)
@@ -37,7 +37,7 @@ namespace ProductLib
         }
         public decimal GetCost()
         {
-            return Cost * Convert.ToDecimal(MarkUp) / 100;
+            return Cost * (Convert.ToDecimal(MarkUp) + 100) / 100;
         }
         public static implicit operator int(Product p) => (int)p.GetCost() * 100;
         public static implicit operator double(Product p) => (double)p.GetCost();
