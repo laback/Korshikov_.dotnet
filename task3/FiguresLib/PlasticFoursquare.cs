@@ -8,7 +8,7 @@ namespace FiguresLib
 {
     public class PlasticFoursquare : PlasticFigure
     {
-        public PlasticFoursquare(double lenght, double width) : base(lenght, width) { }
+        public PlasticFoursquare(double variable) : base(variable, TypeOfFigure.Foursquare) { }
         public override double GetSquare()
         {
             double square = side * side;

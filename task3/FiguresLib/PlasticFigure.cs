@@ -8,11 +8,7 @@ namespace FiguresLib
 {
     public abstract class PlasticFigure : Figure
     {
-        public PlasticFigure(double radius) : base(radius)
-        {
-            color = Color.white;
-        }
-        public PlasticFigure(double lenght, double width) : base(lenght, width)
+        public PlasticFigure(double varialbe, TypeOfFigure typeOfFigure) : base(varialbe, typeOfFigure, FigureMaterial.Plastic)
         {
             color = Color.white;
         }

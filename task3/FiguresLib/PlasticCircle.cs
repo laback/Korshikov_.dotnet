@@ -8,7 +8,7 @@ namespace FiguresLib
 {
     public class PlasticCircle : PlasticFigure
     {
-        public PlasticCircle(double radius) : base(radius) { }
+        public PlasticCircle(double radius) : base(radius, TypeOfFigure.Circle) { }
         public override double GetSquare()
         {
             double square = Math.PI * Math.Pow(this.radius, 2);

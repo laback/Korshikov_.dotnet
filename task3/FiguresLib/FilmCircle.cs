@@ -8,7 +8,7 @@ namespace FiguresLib
 {
     public class FilmCircle : FilmFigure
     {
-        public FilmCircle(double variable) : base(variable) {}
+        public FilmCircle(double variable) : base(variable, TypeOfFigure.Circle) {}
         public override double GetSquare()
         {
             double square = Math.PI * Math.Pow(this.radius, 2);

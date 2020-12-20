@@ -8,7 +8,7 @@ namespace FiguresLib
 {
     public class FilmFoursquare : FilmFigure
     {
-        public FilmFoursquare(double lenght, double width) : base(lenght, width) { }
+        public FilmFoursquare(double variable) : base(variable, TypeOfFigure.Foursquare) { }
         public override double GetSquare()
         {
             double square = side * side;

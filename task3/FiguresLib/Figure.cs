@@ -17,20 +17,35 @@ namespace FiguresLib
         black,
         white
     }
+    public enum TypeOfFigure
+    {
+        Circle,
+        Foursquare
+    }
+    public enum FigureMaterial
+    {
+        Plastic,
+        Paper,
+        Film
+    }
     public abstract class Figure
     {
         public Color color { get; set; }
         protected double radius { get; set; }
         protected double side { get; set; }
         public bool IsPainted { get; set; }
+        public FigureMaterial figureMaterial {get;set;}
+        public TypeOfFigure typeOfFigure { get; set; }
         public abstract void ChangeColor(Color color);
         public abstract double GetSquare();
         public abstract double GetPerimeter();
-        public Figure(double variable) 
+        public Figure(double variable, TypeOfFigure typeOfFigure, FigureMaterial figureMaterial) 
         { 
             IsPainted = false;
             radius = variable;
             side = variable;
+            this.typeOfFigure = typeOfFigure;
+            this.figureMaterial = figureMaterial;
         }
         public abstract void ChangeFigure(double variable);
     }

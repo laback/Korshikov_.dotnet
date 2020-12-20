@@ -8,11 +8,7 @@ namespace FiguresLib
 {
     public abstract class PaperFigure : Figure
     {
-        public PaperFigure(double radius) : base(radius)
-        {
-            color = Color.white;
-        }
-        public PaperFigure(double lenght, double width) : base(lenght, width)
+        public PaperFigure(double varialbe, TypeOfFigure typeOfFigure) : base(varialbe, typeOfFigure, FigureMaterial.Paper)
         {
             color = Color.white;
         }

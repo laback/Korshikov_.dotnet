@@ -68,7 +68,7 @@ namespace FiguresBoxLib
             List<Figure> figures = new List<Figure>();
             foreach(Figure f in figures)
             {
-                if (f.GetType() == typeof(FilmFigure))
+                if (f.figureMaterial == FigureMaterial.Film)
                     figures.Add(f);
             }
             return figures;
@@ -78,7 +78,7 @@ namespace FiguresBoxLib
             List<Figure> figures = new List<Figure>();
             foreach (Figure f in figures)
             {
-                if (f.GetType() == typeof(PlasticFigure) && f.color == Color.no)
+                if (f.figureMaterial == FigureMaterial.Plastic && f.color == Color.no)
                     figures.Add(f);
             }
             return figures;
@@ -106,7 +106,7 @@ namespace FiguresBoxLib
             List<Figure> cirles = new List<Figure>();
             foreach(Figure f in figures)
             {
-                if (f.GetType() == typeof(FilmCircle) || f.GetType() == typeof(PaperCircle) || f.GetType() == typeof(PlasticCircle))
+                if (f.typeOfFigure == TypeOfFigure.Circle)
                     cirles.Add(f);
             }
             return cirles;

@@ -8,13 +8,9 @@ namespace FiguresLib
 {
     public abstract class FilmFigure : Figure
     {
-        public FilmFigure(double radius) : base(radius)
+        public FilmFigure(double varialbe, TypeOfFigure typeOfFigure) : base(varialbe, typeOfFigure, FigureMaterial.Film)
         {
-            color = Color.no;
-        }
-        public FilmFigure(double lenght, double width) : base(lenght, width)
-        {
-            color = Color.no;
+            color = Color.white;
         }
         public override void ChangeColor(Color color)
         {
